@@ -1,0 +1,72 @@
+<!doctype>
+<html>
+<head>
+<title>Calculator</title>
+<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="css/styles.css" type="text/css" rel="stylesheet" />
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-app="calc"  ng-controller="calcCtrl">
+<section class="container-fluid">
+<header><h1>Calculator</h1></header>
+	<form name="calcForm">
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Value 1</label>
+				<input type="textbox" ng-model="valueOne" class="formcontrol" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Value 2</label>
+				<input type="textbox" ng-model="valueTwo" class="formcontrol" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<strong>Output: {{ output }}</strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<input type="button" value="Add" ng-click="Calculator.add(valueOne, valueTwo)" />
+					<input type="button" value="Subtract" ng-click="Calculator.subtract(valueOne, valueTwo)" />
+					<input type="button" value="Multiply" ng-click="Calculator.multiply(valueOne, valueTwo)" />
+					<input type="button" value="Divide" ng-click="Calculator.divide(valueOne, valueTwo)" />
+				</div>
+			</div>
+		</div>
+		
+	</form>
+<h1>Scientific Calculator</h1>
+	<form name="scCalcForm">
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Value </label>
+				<input type="textbox" ng-model="scValue" class="formcontrol" />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<strong>Output: <span id="scOutput"></span></strong>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="form-group">
+					<input type="button" value="Sin" ng-click="ScientificCalculator.sin(scValue)" />
+					<input type="button" value="Cos" ng-click="ScientificCalculator.cos(scValue)" />
+					<input type="button" value="Tan" ng-click="ScientificCalculator.tan(scValue)" />
+					<input type="button" value="Log" ng-click="ScientificCalculator.log(scValue)" />
+				</div>
+			</div>
+		</div>
+		
+	</form>
+</section>
+
+</body>
+</html>
+
